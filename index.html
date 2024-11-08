@@ -31,12 +31,12 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
         }
+        h1 {
+            font-family: 'Cinzel', serif;
+        }
         .perfume-card:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-family: 'Cinzel', serif;
         }
     </style>
 </head>
@@ -45,10 +45,8 @@
     <!-- Header section with logo and navigation links -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-center items-center">
-            <!-- Store logo/title -->
-            <h1 class="text-4xl text-gray-800" > Rivana </h1>
+            <h1 class="text-4xl text-gray-800"> Rivana </h1>
         </div>
-        <!-- Navigation links under logo -->
         <nav class="bg-gray-300 py-2">
             <div class="container mx-auto flex justify-center space-x-8">
                 <a class="text-gray-600 hover:text-gray-800" href="#"> Home </a>
@@ -61,14 +59,13 @@
 
     <!-- Main content section with title and perfume catalogue -->
     <main class="container mx-auto px-6 py-8">
-        <!-- Introductory section for the catalogue -->
         <section class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-4"> Discover Our Premium Perfumes </h2>
+            <h2 class="text-3xl font-bold mb-4"> Discover Our Premium Perfumes </h2>
             <p class="text-gray-600"> Explore our exclusive collection of fragrances that captivate the senses. </p>
         </section>
 
         <!-- Perfume cards grid layout (responsive design) -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- First perfume card -->
             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card transition-transform duration-300" data-aos="fade-up">
                 <img alt="Your image description" class="w-full h-64 object-contain" src="https://i.imgur.com/5Y7qKBa.png" width="400" height="400"/>
@@ -104,10 +101,7 @@
     <!-- Footer section with copyright and social media links -->
     <footer class="bg-white shadow-md mt-12" data-aos="fade-up">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Copyright notice -->
             <p class="text-gray-600"> © 2023 Rivana. All rights reserved. </p>
-            
-            <!-- Social media links with icons -->
             <div class="space-x-4">
                 <a class="text-gray-600 hover:text-gray-800" href="#"><i class="fab fa-facebook-f"></i></a>
                 <a class="text-gray-600 hover:text-gray-800" href="#"><i class="fab fa-twitter"></i></a>
