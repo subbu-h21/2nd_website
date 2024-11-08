@@ -33,63 +33,29 @@
         h1 {
             font-family: 'Cinzel', serif;
         }
-
-        /* Custom styles for the sidebar */
-        .sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            background-color: #f8f8f8;
-            padding-top: 50px;
-        }
-        .sidebar a {
-            display: block;
-            padding: 12px 16px;
-            font-size: 18px;
-            color: #333;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .sidebar a:hover {
-            background-color: #ddd;
-        }
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Sidebar with navigation links -->
-    <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">Catalogue</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <!-- Main content area -->
-    <div class="content">
-        <!-- Header section with logo centered -->
-        <header class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-center">
-                <!-- Store logo/title -->
-                <h1 class="text-5xl text-gray-800"> Rivana </h1>
-            </div>
-        </header>
-
-        <!-- Additional content goes here -->
-        <section class="perfume-catalogue py-8">
-            <h2 class="text-3xl font-semibold mb-6">Perfume Collection</h2>
-            <!-- Perfume cards or catalogue content -->
-        </section>
-    </div>
+    <!-- Header section with logo and navigation links -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Store logo/title -->
+            <h1 class="text-5xl text-gray-800"> Rivana </h1>
+            
+            <!-- Navigation links -->
+            <nav class="space-x-4">
+                <a class="text-gray-600 hover:text-gray-800" href="#"> Home </a>
+                <a class="text-gray-600 hover:text-gray-800" href="#"> Catalogue </a>
+                <a class="text-gray-600 hover:text-gray-800" href="#"> About </a>
+                <a class="text-gray-600 hover:text-gray-800" href="#"> Contact </a>
+            </nav>
+        </div>
+    </header>
 
 </body>
 </html>
+
 
 
     <!-- Main content section with title and perfume catalogue -->
