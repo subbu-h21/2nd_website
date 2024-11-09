@@ -49,17 +49,23 @@
 <body class="bg-gray-100 text-gray-900">
 
     <!-- Header section with logo, navigation, and search bar -->
+    <!-- Header section with logo, navigation, and search bar -->
     <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-4xl text-gray-800">Rivana</h1>
-            <input type="text" id="searchBar" placeholder="Search for perfumes..." class="w-1/3 px-4 py-2 border rounded-md" onkeyup="filterProducts()"/>
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Rivana logo centered on all screens -->
+            <h1 class="text-4xl text-gray-800 text-center md:text-left w-full md:w-auto">Rivana</h1>
+
+            <!-- Search bar moved below the navigation on small screens -->
+            <input type="text" id="searchBar" placeholder="Search for perfumes..." class="w-full md:w-1/3 px-4 py-2 border rounded-md mt-4 md:mt-0" onkeyup="filterProducts()"/>
         </div>
+
+        <!-- Navigation links -->
         <nav class="bg-gray-300 py-2">
-            <div class="container mx-auto flex justify-center space-x-8">
-                <a class="text-gray-600 hover:text-gray-800" href="#">Home</a>
-                <a class="text-gray-600 hover:text-gray-800" href="#">Catalogue</a>
-                <a class="text-gray-600 hover:text-gray-800" href="#">About</a>
-                <a class="text-gray-600 hover:text-gray-800" href="#">Contact</a>
+            <div class="container mx-auto flex flex-row justify-center space-x-8">
+                <a class="text-gray-600 hover:text-gray-800 py-2" href="#">Home</a>
+                <a class="text-gray-600 hover:text-gray-800 py-2" href="#">Catalogue</a>
+                <a class="text-gray-600 hover:text-gray-800 py-2" href="#">About</a>
+                <a class="text-gray-600 hover:text-gray-800 py-2" href="#">Contact</a>
             </div>
         </nav>
     </header>
