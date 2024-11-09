@@ -6,23 +6,24 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     
     <!-- Page title -->
-    <title> Rivana - Perfume Catalogue </title>
+    <title>Rivana - Perfume Catalogue</title>
     
     <!-- Include Tailwind CSS from CDN for utility-based styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome for social media icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
     
     <!-- Google Fonts for custom typography -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     
     <!-- AOS Library for scroll animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-
-    <!-- Custom styles for fonts and card hover effect -->
+    
+    <!-- Fuse.js Library for Fuzzy Search -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+    
     <style>
         html {
             scroll-behavior: smooth;
@@ -37,7 +38,7 @@
             font-family: 'Cinzel', serif;
         }
         h3 {
-            font-family: 'Roboto', sans-serif; /* Change this line */
+            font-family: 'Roboto', sans-serif;
         }
         .perfume-card:hover {
             transform: scale(1.05);
@@ -47,17 +48,18 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Header section with logo and navigation links -->
+    <!-- Header section with logo, navigation, and search bar -->
     <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-center items-center">
-            <h1 class="text-4xl text-gray-800"> Rivana </h1>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-4xl text-gray-800">Rivana</h1>
+            <input type="text" id="searchBar" placeholder="Search for perfumes..." class="w-1/3 px-4 py-2 border rounded-md" onkeyup="filterProducts()"/>
         </div>
         <nav class="bg-gray-300 py-2">
             <div class="container mx-auto flex justify-center space-x-8">
-                <a class="text-gray-600 hover:text-gray-800" href="#"> Home </a>
-                <a class="text-gray-600 hover:text-gray-800" href="#"> Catalogue </a>
-                <a class="text-gray-600 hover:text-gray-800" href="#"> About </a>
-                <a class="text-gray-600 hover:text-gray-800" href="#"> Contact </a>
+                <a class="text-gray-600 hover:text-gray-800" href="#">Home</a>
+                <a class="text-gray-600 hover:text-gray-800" href="#">Catalogue</a>
+                <a class="text-gray-600 hover:text-gray-800" href="#">About</a>
+                <a class="text-gray-600 hover:text-gray-800" href="#">Contact</a>
             </div>
         </nav>
     </header>
@@ -65,11 +67,10 @@
     <!-- Main content section with title and perfume catalogue -->
     <main class="container mx-auto px-6 py-8">
         <section class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4"> Discover Our Premium Perfumes </h2>
-            <p class="text-gray-600"> Explore our exclusive collection of fragrances that captivate the senses. </p>
+            <h2 class="text-3xl font-bold mb-4">Discover Our Premium Perfumes</h2>
+            <p class="text-gray-600">Explore our exclusive collection of fragrances that captivate the senses.</p>
         </section>
 
-        
         <!-- Perfume cards grid layout (responsive design) -->
         <section class="grid grid-cols-2 md:grid-cols-3 gap-2">
             <!-- First perfume card -->
@@ -82,7 +83,7 @@
                     <button class="w-full px-2.5 py-1 hover:bg-gray-800">View Details</button>
                 </div>
             </div>
-        
+
             <!-- Second perfume card -->
             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
                 <img alt="Dior Sauvage" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/swwD5bx.png" /> 
@@ -93,9 +94,8 @@
                     <button class="w-full px-2.5 py-1 hover:bg-gray-800">View Details</button>
                 </div>
             </div>
-        
+
             <!-- Third perfume card -->
-          
             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
                 <img alt="Afnan 9PM" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/H1OfmR6.jpeg" /> 
                 <h3 class="text-lg mb-1 roboto-font">Afnan 9PM</h3>
@@ -107,9 +107,8 @@
             </div>
 
             <!-- Fourth perfume card -->
-          
             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
-                <img alt="Afnan 9PM" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/Yn49WNj.jpeg" /> 
+                <img alt="Detour Noir" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/Yn49WNj.jpeg" /> 
                 <h3 class="text-lg mb-1 roboto-font">Detour Noir</h3>
                 <p class="text-gray-500 text-sm mb-2">From Rs.999.00</p>
                 <div class="flex-grow"></div>
@@ -119,9 +118,8 @@
             </div>
 
             <!-- Fifth perfume card -->
-          
             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
-                <img alt="Afnan 9PM" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/zj68oao.png" /> 
+                <img alt="Lataffa Fakhar" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/zj68oao.png" /> 
                 <h3 class="text-lg mb-1 roboto-font">Lataffa Fakhar</h3>
                 <p class="text-gray-500 text-sm mb-2">From Rs.1599.00</p>
                 <div class="flex-grow"></div>
@@ -130,10 +128,9 @@
                 </div>
             </div>
 
-             <!-- Sixth perfume card -->
-          
-             <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
-                <img alt="Afnan 9PM" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/Idk9GXK.jpeg" /> 
+            <!-- Sixth perfume card -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden perfume-card flex flex-col text-center" data-aos="fade-up" style="padding-top: 20px;"> 
+                <img alt="Qaed-al-Fursan" class="w-40 h-40 object-cover mx-auto mb-2" src="https://i.imgur.com/Idk9GXK.jpeg" /> 
                 <h3 class="text-lg mb-1 roboto-font">Qaed-al-Fursan</h3>
                 <p class="text-gray-500 text-sm mb-2">From Rs.1899.00</p>
                 <div class="flex-grow"></div>
@@ -143,16 +140,12 @@
             </div>
 
         </section>
-        
-        
-        
-
     </main>
 
     <!-- Footer section with copyright and social media links -->
     <footer class="bg-white shadow-md mt-12" data-aos="fade-up">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <p class="text-gray-600"> © 2023 Rivana. All rights reserved. </p>
+            <p class="text-gray-600">© 2023 Rivana. All rights reserved.</p>
             <div class="space-x-4">
                 <a class="text-gray-600 hover:text-gray-800" href="#"><i class="fab fa-facebook-f"></i></a>
                 <a class="text-gray-600 hover:text-gray-800" href="#"><i class="fab fa-twitter"></i></a>
@@ -170,6 +163,50 @@
             easing: 'ease',
             once: true,
             mirror: false
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Product data
+            const products = [...document.querySelectorAll('.perfume-card')].map(card => ({
+                name: card.querySelector('h3').textContent.trim(), // Perfume name from h3
+                element: card
+            }));
+
+            // Initialize Fuse.js
+            const fuse = new Fuse(products, {
+                keys: ['name'],
+                threshold: 0.4
+            });
+
+            // Search function
+            function filterProducts() {
+                const query = document.getElementById('searchBar').value.trim();
+                
+                // If the query is empty, show all products
+                if (query === '') {
+                    document.querySelectorAll('.perfume-card').forEach(card => {
+                        card.style.display = 'block'; // Show all products
+                    });
+                    return; // Exit the function early
+                }
+
+                // Otherwise, perform the search and show matching products
+                const results = fuse.search(query);
+
+                // Hide all products initially
+                document.querySelectorAll('.perfume-card').forEach(card => {
+                    card.style.display = 'none';
+                });
+
+                // Show matching products
+                results.forEach(result => {
+                    result.item.element.style.display = 'block';
+                });
+            }
+
+            // Attach search function to input
+            document.getElementById('searchBar').addEventListener('keyup', filterProducts);
         });
     </script>
 
