@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <!-- Character encoding and viewport settings for responsive design -->
@@ -49,9 +50,19 @@
             transform: none !important;
         }
 
-       
+        /* Make font sizes smaller on small screens */
+        @media (max-width: 640px) {
+            .perfume-card h3 {
+                font-size: 0.875rem; /* Smaller font for perfume names */
+            }
+            .perfume-card p {
+                font-size: 0.75rem; /* Smaller font for prices */
+            }
+            .footer-reveal p {
+                font-size: 0.875rem; /* Smaller font for footer text */
+            }
         
-
+        }
 
         html, body {
             height: 100%;
@@ -202,7 +213,7 @@
             <div class="container mx-auto px-6 py-4">
                 <!-- Contacts Section -->
                 <div class="mb-4">
-                    <p class="text-2xl text-gray-800 mb-2 roboto">Contact Us</p>
+                    <p class="text-2xl mb:text-4xl text-gray-800 mb-2 roboto">Contact Us</p>
                     <p class="text-gray-600">Phone: +123 456 7890</p>
                     <p class="text-gray-600">Email: info@rivana.com</p>
                     <p class="text-gray-600">Address: 123 Perfume St., Fragrance City, SC 12345</p>
